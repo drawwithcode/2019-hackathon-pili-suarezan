@@ -1,4 +1,8 @@
 var myImage1;
+var myImage2;
+var myImage3;
+var myImage4;
+var myImage5;
 var mySound;
 var analyzer;
 
@@ -6,6 +10,10 @@ var analyzer;
 function preload() {
   mySound = loadSound("./assets/TG1_bumper.mp3");
   myImage1 = loadImage("./assets/dance1.jpg");
+  myImage2 = loadImage("./assets/dance2.jpg");
+  myImage3 = loadImage("./assets/dance3.jpg");
+  myImage4 = loadImage("./assets/dance4.jpg");
+  myImage5 = loadImage("./assets/dance5.jpg");
 }
 
 function setup() {
@@ -19,11 +27,22 @@ function setup() {
   mySound.pause();
   mySound.playMode('restart');
 
+
 }
 
 function draw() {
 //Image
-image(myImage1, width / 2, height / 2, myImage1.With / 1.2, myImage1.height / 1.2);
+if (frameCount < 10){
+  image(myImage1, width / 2, height / 2, myImage1.With / 1.2, myImage1.height / 1.2);
+} else if (frameCount < 20) {
+  image(myImage2, width / 2, height / 2, myImage2.With / 1.2, myImage2.height / 1.2);
+} else if (frameCount < 30){
+  image(myImage3, width / 2, height / 2, myImage3.With / 1.2, myImage3.height / 1.2);
+} else if(frameCount < 40){
+  image(myImage4, width / 2, height / 2, myImage4.With / 1.2, myImage4.height / 1.2);
+}
+
+//image(myImage1, width / 2, height / 2, myImage1.With / 1.2, myImage1.height / 1.2);
 
 //Sound map
     var volume = 0;
@@ -48,6 +67,7 @@ image(myImage1, width / 2, height / 2, myImage1.With / 1.2, myImage1.height / 1.
       mySound.pause();
     }
   }
+
 
 
   //WINDOW RESIZED
